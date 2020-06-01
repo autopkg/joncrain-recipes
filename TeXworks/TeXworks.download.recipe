@@ -8,8 +8,8 @@
 	<string>com.github.joncrain.download.TeXworks</string>
 	<key>Input</key>
 	<dict>
-		<key>GITHUB_REPO</key>
-		<string>TeXworks/TeXworks</string>
+		<key>ASSET_REGEX</key>
+		<string>^.*.dmg$</string>
 		<key>NAME</key>
 		<string>TeXworks</string>
 	</dict>
@@ -20,8 +20,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>asset_regex</key>
+				<string>%ASSET_REGEX%</string>
 				<key>github_repo</key>
-				<string>%GITHUB_REPO%</string>
+				<string>TeXworks/TeXworks</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>
