@@ -16,14 +16,8 @@
 		<dict>
 			<key>blocking_applications</key>
 			<array>
-				<string>PlasticSCMServer.app</string>
 				<string>Gluon.app</string>
-				<string>PlasticXSCM.app</string>
 				<string>PlasticSCM.app</string>
-				<string>macmergetool.app</string>
-				<string>cm.app</string>
-				<string>clconfigureclient.app</string>
-				<string>PlasticSCMUnityPlugin.app</string>
 			</array>
 			<key>catalogs</key>
 			<array>

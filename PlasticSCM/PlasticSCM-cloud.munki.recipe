@@ -17,13 +17,7 @@
 			<key>blocking_applications</key>
 			<array>
 				<string>Gluon.app</string>
-				<string>PlasticSCMServer.app</string>
 				<string>PlasticSCM.app</string>
-				<string>macmergetool.app</string>
-				<string>PlasticSCMUnityPlugin.app</string>
-				<string>clconfigureclient.app</string>
-				<string>PlasticXSCM.app</string>
-				<string>cm.app</string>
 			</array>
 			<key>catalogs</key>
 			<array>
