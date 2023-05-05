@@ -24,9 +24,9 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Plastic SCM is a commercial SCM system developed by Codice Software. Plastic tries to focus on big repositories, parallel development, branching and merging and security.</string>
+			<string>Plastic SCM is now Unity Version Control, a component of Unity DevOps. Unity Version Control is a scalable, engine-agnostic version control and source code management tool for game development studios of all sizes.</string>
 			<key>developer</key>
-			<string>Codice Software</string>
+			<string>Unity Technologies</string>
 			<key>display_name</key>
 			<string>PlasticSCM - Cloud Edition</string>
 			<key>name</key>

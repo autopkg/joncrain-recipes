@@ -16,6 +16,15 @@
 	<key>Process</key>
 	<array>
 		<dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>This recipe will soon be moved to Unity VCS.</string>
+			</dict>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
@@ -66,7 +75,7 @@
 					<string>Apple Root CA</string>
 				</array>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/plasticscm-cloud-%version%.pkg</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/unity-vcs-%version%.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -77,7 +86,7 @@
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/unpack</string>
 				<key>flat_pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/plasticscm-cloud-%version%.pkg</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/unity-vcs-%version%.pkg</string>
 				<key>purge_destination</key>
 				<true/>
 			</dict>
