@@ -15,7 +15,7 @@
 	<string>1.0.0</string>
 	<key>Process</key>
 	<array>
-		<dict>
+		<!-- <dict>
 			<key>Processor</key>
 			<string>DeprecationWarning</string>
 			<key>Arguments</key>
@@ -23,7 +23,7 @@
 				<key>warning_message</key>
 				<string>This recipe will soon be moved to Unity VCS.</string>
 			</dict>
-		</dict>
+		</dict> -->
 		<dict>
 			<key>Arguments</key>
 			<dict>
