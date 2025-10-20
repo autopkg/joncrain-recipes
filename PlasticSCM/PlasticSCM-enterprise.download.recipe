@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Description</key>
+	<string>Downloads the current release version of PlasticSCM - Cloud Edition.
+		ARCHITECTURE options are x86_64 and arm64. Defaults to arm64 if not overridden.
+		url for x86_64: https://www.plasticscm.com/download/downloadinstaller/%version%/plasticscm/macosx/full
+		url for arm64: https://www.plasticscm.com/download/downloadinstaller/%version%/plasticscm/macosx/fullarm
+	</string>
 	<key>Identifier</key>
 	<string>com.github.joncrain.download.PlasticSCM-enterprise</string>
 	<key>Input</key>
@@ -10,6 +16,8 @@
 		<string>PlasticSCM-enterprise</string>
 		<key>URL</key>
 		<string>https://www.plasticscm.com/download</string>
+		<key>ARCHITECTURE</key>
+		<string>arm64</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -24,6 +32,49 @@
 				<string>This recipe will soon be moved to Unity VCS.</string>
 			</dict>
 		</dict> -->
+		<dict>
+			<key>Processor</key>
+			<string>FindAndReplace</string>
+			<key>Arguments</key>
+			<dict>
+				<key>find</key>
+				<string>arm64</string>
+				<key>input_string</key>
+				<string>%ARCHITECTURE%</string>
+				<key>replace</key>
+				<string>arm</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>FindAndReplace</string>
+			<key>Arguments</key>
+			<dict>
+				<key>find</key>
+				<string>x86_64</string>
+				<key>input_string</key>
+				<string>%output_string%</string>
+				<key>replace</key>
+				<string></string>
+				<key>result_output_var_name</key>
+				<string>DOWNLOAD_ARCH</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>FindAndReplace</string>
+			<key>Arguments</key>
+			<dict>
+				<key>find</key>
+				<string>x86_64</string>
+				<key>input_string</key>
+				<string>%ARCHITECTURE%</string>
+				<key>replace</key>
+				<string>x64</string>
+				<key>result_output_var_name</key>
+				<string>ARCHITECTURE</string>
+			</dict>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
@@ -43,7 +94,7 @@
 				<key>filename</key>
 				<string>%NAME%-%version%.zip</string>
 				<key>url</key>
-				<string>%URL%/downloadinstaller/%version%/plasticscm/macosx/full?flags=None</string>
+				<string>%URL%/downloadinstaller/%version%/plasticscm/macosx/full%DOWNLOAD_ARCH%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -75,7 +126,7 @@
 					<string>Apple Root CA</string>
 				</array>
 				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/unity-vcs-on-prem-full-%version%.pkg</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/unity-vcs-on-prem-full-osx-%ARCHITECTURE%-%version%.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -86,7 +137,7 @@
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/unpack</string>
 				<key>flat_pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/unity-vcs-on-prem-full-%version%.pkg</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/unity-vcs-on-prem-full-osx-%ARCHITECTURE%-%version%.pkg</string>
 				<key>purge_destination</key>
 				<true/>
 			</dict>
